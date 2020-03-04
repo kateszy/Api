@@ -1,0 +1,6 @@
+{
+    "env": {
+        "MONGODB_USERNAME": "Hubert",
+        "MONGODB_PASSWORD": "projektinz"
+    }
+}
