@@ -41,11 +41,7 @@ router.post('/create', authenticate, (req, res, next) => {
 router.get('/', (req, res, next) => {
 
     Product.find({})
-<<<<<<< HEAD
     .select('_id name price oldPrice productPic category brand slug')
-=======
-    .select('_id name price productPic category brand oldPrice slug')
->>>>>>> 92665f4af9d8716505717807256550ed16f0f179
     .exec()
     .then(products => {
         res.status(200).json({

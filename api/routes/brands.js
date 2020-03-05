@@ -1,11 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
-<<<<<<< HEAD
 
-=======
-const authenticate = require('../middleware/authenticate');
->>>>>>> 92665f4af9d8716505717807256550ed16f0f179
 
 const Brand = require('../models/brand');
 const Product = require('../models/product');
@@ -32,11 +28,7 @@ router.get('/', (req, res, next) => {
 
 });
 
-<<<<<<< HEAD
 router.post('/create', (req, res, next) => {
-=======
-router.post('/create', authenticate, (req, res, next) => {
->>>>>>> 92665f4af9d8716505717807256550ed16f0f179
 
     const brand = new Brand({
         _id: new mongoose.Types.ObjectId(),
@@ -103,7 +95,7 @@ router.get('/:categorySlug/:brandSlug', (req, res, next) => {
     .exec()
     .then(category => {
         if(category){
-                Product.find({category: category._id})
+                Brand.find({category: category._id})
                 .select('_id name price productPic category slug')
                 .exec()
                 .then(brand => {
