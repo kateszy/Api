@@ -7,6 +7,11 @@ const categorySchema = mongoose.Schema({
     parent: { type: String },
     createdAt: Date,
     createdBy: { type: mongoose.Schema.Types.ObjectId, ref: 'Admin' },
+<<<<<<< HEAD
+=======
+    updatedAt: Date,
+    updatedBy: { type: mongoose.Schema.Types.ObjectId, ref: 'Admin' }
+>>>>>>> 92665f4af9d8716505717807256550ed16f0f179
 });
 
 module.exports = mongoose.model('Category', categorySchema);

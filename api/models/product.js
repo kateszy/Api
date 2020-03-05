@@ -4,7 +4,11 @@ const productSchema = mongoose.Schema({
     name: { type: String, required: true },
     slug: { type: String, required: true, unique: true },
     price: { type: Number, required: true },
+<<<<<<< HEAD
     oldPrice: { type: Number, default: 0},
+=======
+    oldPrice: { type: Number, default: 0 },
+>>>>>>> 92665f4af9d8716505717807256550ed16f0f179
     stock: { type: Number, required: true },
     description: { type: String },
     offer: { type: Number, default: 0},
