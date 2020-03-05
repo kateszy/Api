@@ -15,6 +15,7 @@ router.post('/create', authenticate, (req, res, next) => {
         name: req.body.name,
         slug: slug,
         price: req.body.price,
+        oldPrice: req.body.oldPrice,
         stock: req.body.stock,
         description: req.body.description,
         productPic: req.body.productPic,
