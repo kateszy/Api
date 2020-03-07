@@ -57,7 +57,31 @@ router.get('/', (req, res, next) => {
 
 });
 
+router.get('/p/:productSlug', (req, res, next) => {
 
+    const productSlug = req.params.productSlug;
+    
+    Product.findOne({slug: productSlug})
+    .exec()
+    .then(product => {
+        if(product){
+            res.status(200).json({
+                message: product
+            });
+        }else{
+            return res.status(404).json({
+                message: 'Not Found'
+            })
+        }
+    })
+    .catch(err => {
+        res.status(500).json({
+            error: err
+        });
+    });
+
+
+});
 
 router.get('/:categorySlug', (req, res, next) => {
 
